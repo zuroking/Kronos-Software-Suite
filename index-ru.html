@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KRONOS | Элитный Комплекс ПО и Архитектура ИИ</title>
+    <title>KRONOS | Высокотехнологичный Комплекс ПО и Архитектуры ИИ</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -100,6 +100,8 @@
             font-size: 12px;
             text-transform: uppercase;
             font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
         }
 
         .lang-switch a.active {
@@ -240,19 +242,6 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(0, 240, 255, 0.04), transparent 40%);
-            border-radius: 16px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
         .project-card:hover {
             transform: translateY(-4px);
             border-color: rgba(0, 240, 255, 0.25);
@@ -294,6 +283,8 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
+            position: relative;
+            z-index: 10;
         }
 
         .btn-download {
@@ -309,11 +300,14 @@
             gap: 8px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 14px rgba(0, 240, 255, 0.2);
+            position: relative;
+            z-index: 20;
         }
 
         .btn-download:hover {
             transform: translateY(-1px);
             box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
+            cursor: pointer;
         }
 
         .tag-tech {
@@ -437,13 +431,12 @@
         @media (max-width: 768px) {
             header h1 { font-size: 42px; }
             nav { padding: 20px; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav>
         <div class="nav-logo">KRONOS</div>
         <div class="nav-links">
@@ -458,13 +451,11 @@
         </div>
     </nav>
 
-    <!-- Hero Framework -->
     <header>
         <div class="hero-badge">Система инициализирована // 2026</div>
         <h1>Проектирование <span>Вычислительной Мощности</span> и Тактического ИИ</h1>
-        <p class="subtitle">Высокопроизводительные утилиты, криптографические модули и автономные вычислительные системы, разработанные в рамках экосистемы Kronos.</p>
+        <p class="subtitle">Высокопроизводительные кастомные утилиты, криптографические блоки и автономные вычислительные системы, разработанные в рамках платформы Kronos.</p>
         
-        <!-- Status Core Dashboard -->
         <div class="status-grid">
             <div class="status-card">
                 <div class="label">Главный разработчик</div>
@@ -487,124 +478,116 @@
 
     <main class="container">
 
-        <!-- Software Suite Section -->
         <section id="suite">
             <div class="section-header">
                 <h2>Рабочая среда (Мои проекты)</h2>
-                <p>Полностью скомпилированные консольные системы и аналитические наборы инструментов.</p>
+                <p>Полностью компилируемые консольные системы и аналитические инструменты.</p>
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1: Kronos Calculator ULTRA -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Calculator ULTRA <span class="version">v2.5</span></h3>
-                        <p>Мощный вычислительный комплекс, состоящий из 12 модулей: производные, интегралы, матрицы, статистика, финансовый калькулятор, режим программиста и линейная алгебра.</p>
-                    </div>
-                    <div class="card-meta">
-                        <span class="tag-tech">Advanced Python</span>
-                        <a href="Russian/KRONOS CALCULATOR ULTRA by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
-                    </div>
-                </div>
-
-                <!-- Project 2: Kronos Toolkit 2.0 -->
+                
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Kronos Toolkit <span class="version">v2.0</span></h3>
-                        <p>Элитная экосистема из 26 тактических скриптов: математические движки, работа с текстом, переводчики, модули продуктивности и встроенный ИИ-бот через Groq API.</p>
+                        <p>Элитная экосистема из 26 тактических скриптов: продвинутые математические движки, обработка текста, встроенные переводчики и ядро ИИ-чатбота через Groq API.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">Python Core</span>
-                        <a href="Russian/Kronos TOOLKIT 2.0 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Kronos%20TOOLKIT%202.0%20by%20Kronos%20English.py" class="btn-download" download="Kronos_Toolkit_2.0.py">⚡ Запустить</a>
                     </div>
                 </div>
 
-                <!-- Project 3: Calculator V5 -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Научный Калькулятор <span class="version">v5.0</span></h3>
-                        <p>Комплексный математический процессор для сложных систем, матриц, алгебраических операций, тригонометрии и рендеринга графиков в реальном времени через Matplotlib.</p>
+                        <p>Комплексный математический процессор для работы со сложными числовыми системами, матрицами, алгебраическими операциями и рендерингом графиков в реальном времени через Matplotlib.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">Matplotlib</span>
-                        <a href="Russian/Calculator V5 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Calculator%20V5%20by%20Kronos%20English.py" class="btn-download" download="Scientific_Calculator_v5.py">⚡ Запустить</a>
                     </div>
                 </div>
 
-                <!-- Project 4: Password Manager -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>KRONOS ULTRA <span class="version">v2.6</span></h3>
+                        <p>Флагманский вычислительный комплекс из 12 модулей: матрицы, производные, интегралы, статистика, финансовые расчеты, режим программиста и линейная алгебра.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Advanced Python</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/KRONOS%20CALCULATOR%20ULTRA%20V2.6%20by%20Kronos%20English.py" class="btn-download" download="Kronos_Calculator_ULTRA_v2.6.py">⚡ Запустить</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Менеджер Паролей <span class="version">Stable</span></h3>
-                        <p>Локальное хранилище данных с использованием симметричного шифрования Fernet (стек Cryptography) для абсолютной защиты конфиденциальной информации.</p>
+                        <p>Локальное защищенное хранилище данных, использующее симметричное шифрование Fernet (стек Cryptography) для абсолютной защиты конфиденциальной информации.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">Cryptography</span>
-                        <a href="Russian/Password Manager by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Manager%20by%20Kronos%20English.py" class="btn-download" download="Password_Manager.py">⚡ Запустить</a>
                     </div>
                 </div>
 
-                <!-- Project 5: Currency Converter -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Глобальный Конвертер <span class="version">v2.0</span></h3>
-                        <p>Высокоэффективный узел конвертации, связывающий 30 мировых валют (включая KZT, USD, EUR, CNY, RUB) с мгновенным выводом матрицы мульти-конвертации.</p>
+                        <p>Высокоэффективный узел конвертации, связывающий 30 мировых валют (включая KZT, USD, EUR, CNY, RUB) с мгновенным выводом мульти-матрицы кросс-курсов.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">Data Matrix</span>
-                        <a href="Russian/Money Convertor V2 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Money%20Convertor%20V2%20by%20Kronos%20English.py" class="btn-download" download="Currency_Engine_v2.0.py">⚡ Запустить</a>
                     </div>
                 </div>
 
-                <!-- Project 6: Password Generator -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Генератор Энтропии <span class="version">v2.0</span></h3>
-                        <p>Криптографически надежный генератор паролей. Создает последовательности до 128 символов на латинице, кириллице, арабском, греческом и иероглифах.</p>
+                        <p>Криптографически надежный генератор паролей на базе движка 'secrets'. Создает стойкие строки до 128 символов на латинице, кириллице, арабском, греческом языках и иероглифах.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">Secrets Mod</span>
-                        <a href="Russian/Password Generator V2 by Kronos Russain.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Generator%20V2%20by%20Kronos%20English.py" class="btn-download" download="Entropy_Generator_v2.0.py">⚡ Запустить</a>
                     </div>
                 </div>
 
-                <!-- Project 7: Guess Game -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Угадай Число <span class="version">Hardcore</span></h3>
-                        <p>Усложненная версия классической игры на логику. Диапазон до 1 000 000, умные динамические подсказки, счетчик попыток и встроенный таймер для отслеживания скорости.</p>
-                    </div>
-                    <div class="card-meta">
-                        <span class="tag-tech">Logic Engine</span>
-                        <a href="Russian/Number Guess Game Hardcore Edition by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
-                    </div>
-                </div>
-
-                <!-- Project 8: Note App -->
                 <div class="project-card">
                     <div class="project-info">
                         <h3>Менеджер Заметок <span class="version">v1.0</span></h3>
-                        <p>Оптимизированный консольный инструмент для локального ведения журнала, чтения, редактирования и управления текстовыми файлами без лишних затрат памяти.</p>
+                        <p>Оптимизированный консольный инструмент для локального ведения журналов, чтения, редактирования и управления текстовыми файлами без лишних затрат оперативной памяти.</p>
                     </div>
                     <div class="card-meta">
                         <span class="tag-tech">File System</span>
-                        <a href="Russian/Note-taking application by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Note-taking%20application%20by%20Kronos%20English.py" class="btn-download" download="Local_Notes_Manager_v1.0.py">⚡ Запустить</a>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Угадай Число <span class="version">Hardcore</span></h3>
+                        <p>Хардкорная версия классической логической игры. Диапазон до 1 000 000, умные динамические подсказки, счетчик ходов и встроенная подпрограмма отслеживания времени.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Logic Engine</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Number%20Guess%20Game%20Hardcore%20Edition%20by%20Kronos%20English.py" class="btn-download" download="Number_Guess_Hardcore.py">⚡ Запустить</a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Development Pipeline Section -->
         <section id="pipeline" class="pipeline-box">
             <div class="section-header">
-                <h2>Оперативный Конвейер</h2>
-                <p>Отслеживание приоритетных внутренних систем, находящихся на стадии разработки или активного улучшения.</p>
+                <h2>Железный Конвейер</h2>
+                <p>Мониторинг приоритетных подсистем, находящихся на стадии проектирования или активной оптимизации.</p>
             </div>
             <div class="pipeline-item">
                 <div class="pipeline-left">
                     <div class="pipeline-status active"></div>
                     <div>
                         <div class="pipeline-name">Kronos NanoV1 Core</div>
-                        <div class="pipeline-desc">Разработка локального стека обучения текстовых нейросетей, построенного на базе кастомной архитектуры NanoGPT.</div>
+                        <div class="pipeline-desc">Разработка локального стека обучения текстовых нейросетей на базе кастомной архитектуры NanoGPT.</div>
                     </div>
                 </div>
             </div>
@@ -613,51 +596,72 @@
                     <div class="pipeline-status"></div>
                     <div>
                         <div class="pipeline-name">Ultimate Toolkit Bundle</div>
-                        <div class="pipeline-desc">Рефакторинг модулей старого кода версии 1.0 для их бесшовной интеграции в единую архитектуру ядра v2.</div>
+                        <div class="pipeline-desc">Рефакторинг старых модулей кода (версии 1.0) для бесшовного слияния с единой архитектурой ядра v2.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Nexus: Kronos AI Blueprint -->
         <section id="nexus" class="nexus-section">
             <div class="section-header">
                 <h2>Нексус: Дорожная карта Kronos AI (2038)</h2>
-                <p>Стратегическая инициатива по разработке всеобъемлющей, высокоадаптивной когнитивной сети, способной конкурировать с GPT, Gemini и Grok на мировой арене.</p>
+                <p>Стратегическая инициатива по созданию универсальной, высокоадаптивной когнитивной сети, способной на равных конкурировать с ведущими индустриальными ИИ-конгломератами.</p>
             </div>
 
             <div class="nexus-grid">
                 <div class="nexus-item">
                     <div class="nexus-icon">🎖️</div>
                     <h4>Kronos Военный</h4>
-                    <p>Стратегическая оценка рисков, тактический анализ данных и технические вычислительные модули для инженерии.</p>
+                    <p>Оценка стратегических рисков, тактический анализ данных и инженерно-технические расчетные модули.</p>
                 </div>
                 <div class="nexus-item">
                     <div class="nexus-icon">👧</div>
                     <h4>Kronos Образование</h4>
-                    <p>Адаптивные нейросети, настроенные на безопасное когнитивное развитие и персонализированное обучение детей.</p>
+                    <p>Адаптивные нейросети глубокого обучения, сфокусированные на безопасном ускоренном когнитивном развитии детей.</p>
                 </div>
                 <div class="nexus-item">
                     <div class="nexus-icon">🎓</div>
                     <h4>Kronos Студент</h4>
-                    <p>Комплексный помощник в написании академических работ, автоматизации исследований и оптимизации программного кода.</p>
+                    <p>Комплексный помощник в написании академических работ, архитектура автоматизации исследований и оптимизация кода.</p>
                 </div>
                 <div class="nexus-item">
                     <div class="nexus-icon">🏠</div>
                     <h4>Kronos Дом</h4>
-                    <p>Автономная автоматизация повседневной бытовой логики, финансовый трекинг и алгоритмы улучшения образа жизни.</p>
+                    <p>Автономная автоматизация повседневной бытовой логики, финансовый трекинг и алгоритмы улучшения качества жизни.</p>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer Terminal -->
     <footer>
         <p>© 2026 <span>KRONOS SOFTWARE LABS</span> · Астана, Казахстан</p>
-        <p style="margin-top: 6px; color: rgba(255,255,255,0.3);">Вектор: Факультет Computer Science в Нанкинском университете (NJU) · Видение: Alibaba DAMO / Baidu AI Labs Hub</p>
-        <p style="margin-top: 12px;">Защищенный канал связи: <a href="https://t.me/Zuroking">Telegram Terminal</a></p>
+        <p style="margin-top: 6px; color: rgba(255,255,255,0.3);">Вектор: Факультет Computer Science Нанкинского университета (NJU) · Видение: Хаб Alibaba DAMO / Baidu AI Labs</p>
+        <p style="margin-top: 12px;">Канал защищенной связи: <a href="https://t.me/Zuroking">Telegram Терминал</a></p>
     </footer>
 
+    <script>
+        document.querySelectorAll('.btn-download').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                const fileUrl = this.getAttribute('href');
+                const fileName = this.getAttribute('download') || 'script.py';
+
+                fetch(fileUrl)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    })
+                    .catch(err => {
+                        window.open(fileUrl, '_blank');
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
