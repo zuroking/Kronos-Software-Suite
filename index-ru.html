@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Kronos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Rajdhani', sans-serif; font-size: 16px; }
+        header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 60px 20px; text-align: center; border-bottom: 2px solid #00d4ff; }
+        header h1 { font-size: 48px; color: #00d4ff; letter-spacing: 4px; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
+        header p { font-size: 16px; color: #888; margin-bottom: 6px; }
+        header .goal { font-size: 14px; color: #00d4ff; opacity: 0.8; margin-top: 10px; }
+        header .contact { margin-top: 16px; }
+        header .contact a { color: #00d4ff; text-decoration: none; font-size: 14px; border: 1px solid #00d4ff44; padding: 6px 16px; border-radius: 20px; transition: background 0.3s; }
+        header .contact a:hover { background: #00d4ff22; }
+        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .stat { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px; text-align: center; }
+        .stat .num { font-size: 36px; color: #00d4ff; font-weight: bold; font-family: 'Orbitron', sans-serif; }
+        .stat .lbl { font-size: 13px; color: #666; margin-top: 4px; }
+        .section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .section h2 { font-size: 22px; color: #00d4ff; border-left: 4px solid #00d4ff; padding-left: 12px; margin-bottom: 20px; font-family: 'Orbitron', sans-serif; }
+        .about { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; line-height: 1.9; color: #ccc; font-size: 15px; }
+        .about span { color: #00d4ff; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+        .project-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px; transition: border-color 0.3s, transform 0.2s; }
+        .project-card:hover { border-color: #00d4ff; transform: translateY(-4px); }
+        .project-card .icon { font-size: 28px; margin-bottom: 10px; }
+        .project-card h3 { font-size: 15px; color: #fff; margin-bottom: 8px; font-family: 'Orbitron', sans-serif; }
+        .project-card p { font-size: 13px; color: #666; line-height: 1.6; }
+        .tag { display: inline-block; background: #1a1a2e; color: #00d4ff; font-size: 11px; padding: 2px 8px; border-radius: 20px; border: 1px solid #00d4ff33; margin-top: 8px; margin-right: 4px; }
+        .kronos-banner { background: linear-gradient(135deg, #1a1a2e, #0f3460); border: 1px solid #00d4ff; border-radius: 12px; padding: 30px; text-align: center; max-width: 900px; margin: 40px auto; }
+        .kronos-banner h2 { font-size: 30px; color: #00d4ff; margin-bottom: 12px; font-family: 'Orbitron', sans-serif; }
+        .kronos-banner p { color: #888; font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
+        .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; max-width: 460px; margin-left: auto; margin-right: auto; }
+        .module { background: #0a0a1a; border: 1px solid #00d4ff33; border-radius: 8px; padding: 12px; font-size: 14px; color: #ccc; }
+        .module span { font-size: 18px; display: block; margin-bottom: 4px; }
+        .wip { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px 24px; color: #ccc; font-size: 15px; line-height: 1.8; }
+        .wip span { color: #00d4ff; }
+        footer { text-align: center; padding: 30px; color: #333; font-size: 13px; border-top: 1px solid #1a1a1a; margin-top: 40px; }
+        footer span { color: #00d4ff; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 999; display: flex; gap: 8px; }
+        .lang-switch a { background: #111; color: #00d4ff; text-decoration: none; font-size: 13px; border: 1px solid #00d4ff44; padding: 6px 14px; border-radius: 20px; font-family: 'Orbitron', sans-serif; transition: background 0.3s; }
+        .lang-switch a:hover { background: #00d4ff22; }
+        .github-link { display: inline-block; margin-top: 12px; color: #00d4ff; text-decoration: none; font-size: 13px; border: 1px solid #00d4ff44; padding: 6px 16px; border-radius: 20px; transition: background 0.3s; }
+        .github-link:hover { background: #00d4ff22; }
+    </style>
+</head>
+<body>
+
+    <div class="lang-switch">
+        <a href="index.html">🌐 EN</a>
+        <a href="index-kz.html">🌐 KZ</a>
+    </div>
+
+    <header>
+        <h1>Kronos</h1>
+        <p>Начинающий разработчик · Астана, Казахстан · 15 лет</p>
+        <p>Python · Исследователь ИИ · Будущий студент NJU</p>
+        <p class="goal">⚡ Создаю Kronos AI — будущего конкурента GPT и Grok</p>
+        <div class="contact">
+            <a href="https://t.me/Zuroking" target="_blank">✈️ Telegram: @Zuroking</a>
+        </div>
+        <a href="https://github.com/zuroking" target="_blank" class="github-link">💻 GitHub: zuroking</a>
+    </header>
+
+    <div class="stats">
+        <div class="stat"><div class="num">15+</div><div class="lbl">Проектов создано</div></div>
+        <div class="stat"><div class="num">3</div><div class="lbl">Дней программирования</div></div>
+        <div class="stat"><div class="num">2038</div><div class="lbl">Запуск Kronos AI</div></div>
+    </div>
+
+    <div class="section">
+        <h2>Обо мне</h2>
+        <div class="about">
+            <p>Привет! Я <span>Алдияр</span>, известный как <span>Kronos</span> — начинающий разработчик из <span>Астаны, Казахстан</span>. Мне почти 15 лет.</p>
+            <br>
+            <p>Моя цель — создать <span>Kronos AI</span> — универсальную языковую модель, которая будет конкурировать с <span>GPT, Grok и Gemini</span> и использоваться в различных сферах жизни: военной, образовательной, бытовой и других.</p>
+            <br>
+            <p>Я использую <span>Claude Sonnet</span> и <span>ChatGPT / Codex</span> для изучения новых навыков, генерации идей и решения задач.</p>
+            <br>
+            <p>Я постоянно учусь и развиваюсь для достижения своей цели. Каждый проект всегда будет иметь лучшую версию — я постоянно их обновляю и добавляю новые функции.</p>
+            <br>
+            <p>Я всегда открыт для сотрудничества и новых идей — не стесняйтесь обращаться!</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Скачать проекты</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="icon">🧮</div>
+                <h3>Calculator V5</h3>
+                <p>Научный калькулятор с графиками, матрицами, комплексными числами и историей вычислений.</p>
+                <a href="Calculator V5 by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+                <span class="tag">matplotlib</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">⚡</div>
+                <h3>Calculator ULTRA</h3>
+                <p>12 модулей: производные, интегралы, матрицы, статистика, финансовый калькулятор, режим программиста и многое другое.</p>
+                <a href="KRONOS CALCULATOR ULTRA by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+                <span class="tag">Advanced</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">🧰</div>
+                <h3>Kronos Toolkit 2.0</h3>
+                <p>26 инструментов в одной программе — Математика, Конверторы, Текст, Игры, Жизнь и Развлечения.</p>
+                <a href="Kronos_TOOLKIT_2_0_by_Kronos_English.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">🛠️</div>
+                <h3>Ultimate Toolkit 1.0</h3>
+                <p>20 инструментов в одной программе — калькуляторы, игры, конверторы, блокнот и многое другое.</p>
+                <a href="Ultimate Toolkit by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">💱</div>
+                <h3>Currency Converter V2</h3>
+                <p>Конвертер с поддержкой 30 мировых валют. Конвертируй сразу во все валюты.</p>
+                <a href="Money Convertor V2 by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">🔑</div>
+                <h3>Password Generator V2</h3>
+                <p>Многоязычные пароли — английский, русский, китайский, японский, греческий и арабский.</p>
+                <a href="Password Generator V2 by Kronos Russain.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">🔐</div>
+                <h3>Password Manager</h3>
+                <p>Зашифрованный менеджер паролей с шифрованием Fernet.</p>
+                <a href="Password Manager by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">😈</div>
+                <h3>Guess The Number Hardcore</h3>
+                <p>Угадай число от 1 до 1 000 000 с умными подсказками и таймером.</p>
+                <a href="Number Guess Game Hardcore Edition by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">✂️</div>
+                <h3>Rock Paper Scisors</h3>
+                <p>Классическая игра против компьютера с подсчётом очков.</p>
+                <a href="Rock Paper Scizors Game by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">🔁</div>
+                <h3>Text reverse tool</h3>
+                <p>Переворачивает текст по символам и по словам.</p>
+                <a href="Text reserve by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+            <div class="project-card">
+                <div class="icon">📝</div>
+                <h3>Note-taking Application</h3>
+                <p>Блокнот с функциями создания, чтения, редактирования и удаления.</p>
+                <a href="Note-taking application by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
+                <span class="tag">Python</span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Скоро</h2>
+        <div class="wip">
+            <p>🚧 Несколько проектов находятся в разработке:</p>
+            <br>
+            <p>🤖 <span>KronosNanoV1</span> — первый прототип Kronos AI на основе NanoGPT</p>
+            <p>✅ <span>Kronos Calculator ULTRA</span> — выпущен! Скачайте выше.</p>
+            <p>⬆️ <span>Улучшенные версии</span> всех существующих проектов</p>
+        </div>
+    </div>
+
+    <div class="kronos-banner">
+        <h2>⚡ Kronos AI</h2>
+        <p>Универсальный ИИ для всех — умнее и эффективнее Grok.</p>
+        <p>Конкурирует с GPT, Gemini и Grok на мировой арене.</p>
+        <p>Создан для военных, образования, студентов и обычных пользователей.</p>
+        <div class="modules">
+            <div class="module"><span>🎖️</span>Kronos Военный</div>
+            <div class="module"><span>👧</span>Kronos Образование</div>
+            <div class="module"><span>🎓</span>Kronos Студент</div>
+            <div class="module"><span>🏠</span>Kronos Дом</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 <span>Kronos</span> · Астана, Казахстан · Строю будущее ИИ</p>
+        <p style="margin-top: 8px;">Контакт: <a href="https://t.me/Zuroking" style="color:#00d4ff;text-decoration:none;">t.me/Zuroking</a></p>
+    </footer>
+
+</body>
+</html>
