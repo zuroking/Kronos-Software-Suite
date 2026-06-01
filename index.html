@@ -100,6 +100,8 @@
             font-size: 12px;
             text-transform: uppercase;
             font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
         }
 
         .lang-switch a.active {
@@ -240,18 +242,7 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(0, 240, 255, 0.04), transparent 40%);
-            border-radius: 16px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+        /* ИСПРАВЛЕНО: Убран блокирующий слой ::before, мешавший кликам */
 
         .project-card:hover {
             transform: translateY(-4px);
@@ -294,6 +285,8 @@
             justify-content: space-between;
             align-items: center;
             margin-top: auto;
+            position: relative;
+            z-index: 10; /* Кнопки принудительно подняты на передний план */
         }
 
         .btn-download {
@@ -309,11 +302,14 @@
             gap: 8px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 14px rgba(0, 240, 255, 0.2);
+            position: relative;
+            z-index: 20;
         }
 
         .btn-download:hover {
             transform: translateY(-1px);
             box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
+            cursor: pointer;
         }
 
         .tag-tech {
@@ -437,55 +433,214 @@
         @media (max-width: 768px) {
             header h1 { font-size: 42px; }
             nav { padding: 20px; }
-            .nav-links { display: none; } /* Simplified for mobile */
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="projects-grid">
+    <nav>
+        <div class="nav-logo">KRONOS</div>
+        <div class="nav-links">
+            <a href="#suite">Software Suite</a>
+            <a href="#pipeline">Pipeline</a>
+            <a href="#nexus">Kronos AI</a>
+            <div class="lang-switch">
+                <a href="#" class="active">EN</a>
+                <a href="index-ru.html">RU</a>
+                <a href="index-kz.html">KZ</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-badge">System Initialized // 2026</div>
+        <h1>Architecting <span>Computational Power</span> & Tactical Intelligence</h1>
+        <p class="subtitle">High-performance custom utilities, cryptography blocks, and standalone computation systems developed under the Kronos Framework.</p>
         
-        <div class="project-card">
-            <h3>Scientific Calculator <span class="version">v5.0</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Calculator%20V5%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
+        <div class="status-grid">
+            <div class="status-card">
+                <div class="label">Core Operator</div>
+                <div class="val">ZuroKing <span>// Kronos</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Primary Environment</div>
+                <div class="val">Python 3.14 <span>• Stable</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Academic Vector</div>
+                <div class="val">Target: NJU <span>CS '27</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Long-Term Target</div>
+                <div class="val">Kronos AI <span>[2038]</span></div>
+            </div>
         </div>
+    </header>
 
-        <div class="project-card">
-            <h3>KRONOS ULTRA <span class="version">v2.6</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/KRONOS%20CALCULATOR%20ULTRA%20V2.6%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+    <main class="container">
 
-        <div class="project-card">
-            <h3>Kronos Toolkit <span class="version">v2.0</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Kronos%20TOOLKIT%202.0%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+        <section id="suite">
+            <div class="section-header">
+                <h2>Production Environment</h2>
+                <p>Fully compiled, responsive terminal-based systems and analytical toolkits.</p>
+            </div>
 
-        <div class="project-card">
-            <h3>Currency Engine <span class="version">v2.0</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Money%20Convertor%20V2%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Kronos Toolkit <span class="version">v2.0</span></h3>
+                        <p>An elite ecosystem consisting of 26 tactical scripts organized into clean operational blocks: advanced math engines, text systems, translators, and an integrated AI chatbot core via Groq API.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Python Core</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Kronos%20TOOLKIT%202.0%20by%20Kronos%20English.py" class="btn-download" download="Kronos_Toolkit_2.0.py">⚡ Run Script</a>
+                    </div>
+                </div>
 
-        <div class="project-card">
-            <h3>Notes Manager <span class="version">v1.0</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Note-taking%20application%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Scientific Calculator <span class="version">v5.0</span></h3>
+                        <p>Comprehensive mathematical processor capable of handling complex numeric systems, multi-dimensional matrices, algebraic operations, trigonometry algorithms, and direct real-time graph rendering through Matplotlib.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Matplotlib</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Calculator%20V5%20by%20Kronos%20English.py" class="btn-download" download="Scientific_Calculator_v5.py">⚡ Run Script</a>
+                    </div>
+                </div>
 
-        <div class="project-card">
-            <h3>Number Guess <span class="version">Hardcore</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Number%20Guess%20Game%20Hardcore%20Edition%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>KRONOS ULTRA <span class="version">v2.6</span></h3>
+                        <p>Advanced calculation flagship engine featuring discrete algorithmic modules, physics constants processors, complex tracking matrix blocks, and customized deep numeric analytics nodes.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Advanced Python</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/KRONOS%20CALCULATOR%20ULTRA%20V2.6%20by%20Kronos%20English.py" class="btn-download" download="Kronos_Calculator_ULTRA_v2.6.py">⚡ Run Script</a>
+                    </div>
+                </div>
 
-        <div class="project-card">
-            <h3>Entropy Gen <span class="version">v2.0</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Generator%20V2%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Encrypted Key Vault <span class="version">Stable</span></h3>
+                        <p>Locally sandboxed credential storage facility utilizing heavy Fernet symmetric key encryption models via the Python Cryptography stack to protect sensitive authentication vectors.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Cryptography</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Manager%20by%20Kronos%20English.py" class="btn-download" download="Password_Manager.py">⚡ Run Script</a>
+                    </div>
+                </div>
 
-        <div class="project-card">
-            <h3>Key Vault <span class="version">Stable</span></h3>
-            <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Manager%20by%20Kronos%20English.py" class="btn-download" download>⚡ Run Script</a>
-        </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Global Currency Engine <span class="version">v2.0</span></h3>
+                        <p>High-efficiency conversion node linking 30 dominant global fiat systems (including KZT, USD, EUR, CNY, RUB) with instantaneous universal-matrix multi-conversion outputs.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Data Matrix</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Money%20Convertor%20V2%20by%20Kronos%20English.py" class="btn-download" download="Currency_Engine_v2.0.py">⚡ Run Script</a>
+                    </div>
+                </div>
 
-    </div>
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Entropy Generator <span class="version">v2.0</span></h3>
+                        <p>Cryptographically secure password compilation node built upon Python's 'secrets' engine. Generates up to 128-character sequences across multiple alphabet sheets: Latin, Cyrillic, Arabic, Greek, and Kanji/Kana.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Secrets Mod</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Password%20Generator%20V2%20by%20Kronos%20English.py" class="btn-download" download="Entropy_Generator_v2.0.py">⚡ Run Script</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Local Notes Manager <span class="version">v1.0</span></h3>
+                        <p>Streamlined file-handling terminal node designed for optimized localized logging, parsing, and management of raw text files without heavy runtime costs.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">File System</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Note-taking%20application%20by%20Kronos%20English.py" class="btn-download" download="Local_Notes_Manager_v1.0.py">⚡ Run Script</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Number Guess <span class="version">Hardcore</span></h3>
+                        <p>High-entropy logical terminal strategy matrix node. Processes fast calculations across large range spectrum limits with embedded timer tracking subroutines.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Logic Engine</span>
+                        <a href="https://raw.githubusercontent.com/zuroking/Kronos-Software-Suite/main/English/Number%20Guess%20Game%20Hardcore%20Edition%20by%20Kronos%20English.py" class="btn-download" download="Number_Guess_Hardcore.py">⚡ Run Script</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pipeline" class="pipeline-box">
+            <div class="section-header">
+                <h2>Operational Pipeline</h2>
+                <p>Tracking high-priority internal systems currently sitting in staging or active refinement.</p>
+            </div>
+            <div class="pipeline-item">
+                <div class="pipeline-left">
+                    <div class="pipeline-status active"></div>
+                    <div>
+                        <div class="pipeline-name">Kronos NanoV1 Core</div>
+                        <div class="pipeline-desc">Developing a localized neural language text model training stack built natively upon a custom NanoGPT architecture.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pipeline-item">
+                <div class="pipeline-left">
+                    <div class="pipeline-status"></div>
+                    <div>
+                        <div class="pipeline-name">Ultimate Toolkit Bundle</div>
+                        <div class="pipeline-desc">Refining legacy code modules from the 1.0 version to port them into the unified v2 core stack architecture.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nexus" class="nexus-section">
+            <div class="section-header">
+                <h2>The Nexus: Kronos AI Roadmap (2038)</h2>
+                <p>A strategic initiative targeting the development of an all-encompassing, highly adaptive cognitive model network designed to rival elite industrial AI conglomerates.</p>
+            </div>
+
+            <div class="nexus-grid">
+                <div class="nexus-item">
+                    <div class="nexus-icon">🎖️</div>
+                    <h4>Kronos Military</h4>
+                    <p>Strategic risk assessments, tactical data analysis, and technical combat-engineering computational modules.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">👧</div>
+                    <h4>Kronos Education</h4>
+                    <p>Adaptive deep learning networks customized for the accelerated cognitive training and tutoring of children.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">🎓</div>
+                    <h4>Kronos Student</h4>
+                    <p>Comprehensive academic writing assistant, research automation architectures, and software engineering optimization blocks.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">🏠</div>
+                    <h4>Kronos Home</h4>
+                    <p>Autonomous everyday household logic automation, financial tracking, and lifestyle optimization logic sheets.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 <span>KRONOS SOFTWARE LABS</span> · Astana, Kazakhstan</p>
+        <p style="margin-top: 6px; color: rgba(255,255,255,0.3);">Vector: Computer Science Research @ Nanjing University (NJU) · Vision: Alibaba DAMO / Baidu AI Labs Hub</p>
+        <p style="margin-top: 12px;">Secure Contact Endpoint: <a href="https://t.me/Zuroking">Telegram Terminal</a></p>
+    </footer>
 
 </body>
 </html>
