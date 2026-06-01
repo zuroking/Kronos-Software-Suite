@@ -641,6 +641,30 @@
         <p style="margin-top: 6px; color: rgba(255,255,255,0.3);">Vector: Computer Science Research @ Nanjing University (NJU) · Vision: Alibaba DAMO / Baidu AI Labs Hub</p>
         <p style="margin-top: 12px;">Secure Contact Endpoint: <a href="https://t.me/Zuroking">Telegram Terminal</a></p>
     </footer>
+    <script>
+        document.querySelectorAll('.btn-download').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Останавливаем обычное открытие ссылки
+                const fileUrl = this.getAttribute('href');
+                const fileName = this.getAttribute('download') || 'script.py';
 
+                // Скачиваем файл через фоновый запрос, обходя блокировку браузера
+                fetch(fileUrl)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const link = document.createElement('a');
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                    })
+                    .catch(err => {
+                        // Если фоновый запрос заблокирован, просто открываем в новой вкладке
+                        window.open(fileUrl, '_blank');
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
