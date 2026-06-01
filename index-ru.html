@@ -3,213 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио Kronos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>KRONOS | Элитный Комплекс ПО и Архитектура ИИ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Rajdhani', sans-serif; font-size: 16px; }
-        header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 60px 20px; text-align: center; border-bottom: 2px solid #00d4ff; }
-        header h1 { font-size: 48px; color: #00d4ff; letter-spacing: 4px; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
-        header p { font-size: 16px; color: #888; margin-bottom: 6px; }
-        header .goal { font-size: 14px; color: #00d4ff; opacity: 0.8; margin-top: 10px; }
-        header .contact { margin-top: 16px; }
-        header .contact a { color: #00d4ff; text-decoration: none; font-size: 14px; border: 1px solid #00d4ff44; padding: 6px 16px; border-radius: 20px; transition: background 0.3s; }
-        header .contact a:hover { background: #00d4ff22; }
-        .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .stat { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px; text-align: center; }
-        .stat .num { font-size: 36px; color: #00d4ff; font-weight: bold; font-family: 'Orbitron', sans-serif; }
-        .stat .lbl { font-size: 13px; color: #666; margin-top: 4px; }
-        .section { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .section h2 { font-size: 22px; color: #00d4ff; border-left: 4px solid #00d4ff; padding-left: 12px; margin-bottom: 20px; font-family: 'Orbitron', sans-serif; }
-        .about { background: #111; border: 1px solid #222; border-radius: 10px; padding: 24px; line-height: 1.9; color: #ccc; font-size: 15px; }
-        .about span { color: #00d4ff; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-        .project-card { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px; transition: border-color 0.3s, transform 0.2s; }
-        .project-card:hover { border-color: #00d4ff; transform: translateY(-4px); }
-        .project-card .icon { font-size: 28px; margin-bottom: 10px; }
-        .project-card h3 { font-size: 15px; color: #fff; margin-bottom: 8px; font-family: 'Orbitron', sans-serif; }
-        .project-card p { font-size: 13px; color: #666; line-height: 1.6; }
-        .tag { display: inline-block; background: #1a1a2e; color: #00d4ff; font-size: 11px; padding: 2px 8px; border-radius: 20px; border: 1px solid #00d4ff33; margin-top: 8px; margin-right: 4px; }
-        .kronos-banner { background: linear-gradient(135deg, #1a1a2e, #0f3460); border: 1px solid #00d4ff; border-radius: 12px; padding: 30px; text-align: center; max-width: 900px; margin: 40px auto; }
-        .kronos-banner h2 { font-size: 30px; color: #00d4ff; margin-bottom: 12px; font-family: 'Orbitron', sans-serif; }
-        .kronos-banner p { color: #888; font-size: 15px; line-height: 1.8; margin-bottom: 6px; }
-        .modules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; max-width: 460px; margin-left: auto; margin-right: auto; }
-        .module { background: #0a0a1a; border: 1px solid #00d4ff33; border-radius: 8px; padding: 12px; font-size: 14px; color: #ccc; }
-        .module span { font-size: 18px; display: block; margin-bottom: 4px; }
-        .wip { background: #111; border: 1px solid #222; border-radius: 10px; padding: 20px 24px; color: #ccc; font-size: 15px; line-height: 1.8; }
-        .wip span { color: #00d4ff; }
-        footer { text-align: center; padding: 30px; color: #333; font-size: 13px; border-top: 1px solid #1a1a1a; margin-top: 40px; }
-        footer span { color: #00d4ff; }
-        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 999; display: flex; gap: 8px; }
-        .lang-switch a { background: #111; color: #00d4ff; text-decoration: none; font-size: 13px; border: 1px solid #00d4ff44; padding: 6px 14px; border-radius: 20px; font-family: 'Orbitron', sans-serif; transition: background 0.3s; }
-        .lang-switch a:hover { background: #00d4ff22; }
-        .github-link { display: inline-block; margin-top: 12px; color: #00d4ff; text-decoration: none; font-size: 13px; border: 1px solid #00d4ff44; padding: 6px 16px; border-radius: 20px; transition: background 0.3s; }
-        .github-link:hover { background: #00d4ff22; }
+        :root {
+            --bg-base: #030712;
+            --bg-surface: #0b0f19;
+            --bg-surface-elevated: #111827;
+            --accent-cyan: #00f0ff;
+            --accent-blue: #3b82f6;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-glow: rgba(0, 240, 255, 0.15);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --gradient-primary: linear-gradient(135deg, #00f0ff 0%, #3b82f6 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px var(--border-glow);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 10px;
+            background: var(--bg-surface);
+            padding: 4px 8px;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .lang-switch a {
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .lang-switch a.active {
+            background: var(--gradient-primary);
+            color: var(--bg-base);
+        }
+
+        /* Hero Section */
+        header {
+            position: relative;
+            padding: 160px 20px 80px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            color: var(--accent-cyan);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.05);
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        header h1 span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Dashboard Status Grid */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto 80px auto;
+        }
+
+        .status-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .status-card .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .status-card .val {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .status-card .val span {
+            color: var(--accent-cyan);
+        }
+
+        /* Core Section Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Software Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            margin-bottom: 100px;
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(0, 240, 255, 0.04), transparent 40%);
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 240, 255, 0.25);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-info h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-info h3 .version {
+            font-size: 11px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+        }
+
+        .project-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+            height: 72px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .btn-download {
+            background: var(--gradient-primary);
+            color: var(--bg-base);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(0, 240, 255, 0.2);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .tag-tech {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* Nexus: Kronos AI Roadmap Section */
+        .nexus-section {
+            background: radial-gradient(ellipse at center, rgba(17, 24, 39, 0.6) 0%, var(--bg-base) 100%);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        .nexus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .nexus-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .nexus-item:hover {
+            background: rgba(0, 240, 255, 0.02);
+            border-color: rgba(0, 240, 255, 0.2);
+        }
+
+        .nexus-icon {
+            font-size: 28px;
+            margin-bottom: 14px;
+        }
+
+        .nexus-item h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .nexus-item p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* Future Pipeline (WIP) */
+        .pipeline-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 100px;
+        }
+
+        .pipeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .pipeline-item:last-child { border-bottom: none; }
+
+        .pipeline-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .pipeline-status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+        }
+
+        .pipeline-status.active {
+            background: var(--accent-cyan);
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .pipeline-name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .pipeline-desc {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer span { color: var(--text-main); font-weight: 500; }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 42px; }
+            nav { padding: 20px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
     </style>
 </head>
 <body>
 
-    <div class="lang-switch">
-        <a href="index.html">🌐 EN</a>
-        <a href="index-kz.html">🌐 KZ</a>
-    </div>
-
-    <header>
-        <h1>Kronos</h1>
-        <p>Начинающий разработчик · Астана, Казахстан · 15 лет</p>
-        <p>Python · Исследователь ИИ · Будущий студент NJU</p>
-        <p class="goal">⚡ Создаю Kronos AI — будущего конкурента GPT и Grok</p>
-        <div class="contact">
-            <a href="https://t.me/Zuroking" target="_blank">✈️ Telegram: @Zuroking</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-logo">KRONOS</div>
+        <div class="nav-links">
+            <a href="#suite">Проекты</a>
+            <a href="#pipeline">В разработке</a>
+            <a href="#nexus">Kronos AI</a>
+            <div class="lang-switch">
+                <a href="index.html">EN</a>
+                <a href="#" class="active">RU</a>
+                <a href="index-kz.html">KZ</a>
+            </div>
         </div>
-        <a href="https://github.com/zuroking" target="_blank" class="github-link">💻 GitHub: zuroking</a>
+    </nav>
+
+    <!-- Hero Framework -->
+    <header>
+        <div class="hero-badge">Система инициализирована // 2026</div>
+        <h1>Проектирование <span>Вычислительной Мощности</span> и Тактического ИИ</h1>
+        <p class="subtitle">Высокопроизводительные утилиты, криптографические модули и автономные вычислительные системы, разработанные в рамках экосистемы Kronos.</p>
+        
+        <!-- Status Core Dashboard -->
+        <div class="status-grid">
+            <div class="status-card">
+                <div class="label">Главный разработчик</div>
+                <div class="val">ZuroKing <span>// Kronos</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Среда разработки</div>
+                <div class="val">Python 3.14 <span>• Стабильная</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Вектор развития</div>
+                <div class="val">Цель: NJU <span>CS '27</span></div>
+            </div>
+            <div class="status-card">
+                <div class="label">Глобальная цель</div>
+                <div class="val">Kronos AI <span>[2038]</span></div>
+            </div>
+        </div>
     </header>
 
-    <div class="stats">
-        <div class="stat"><div class="num">15+</div><div class="lbl">Проектов создано</div></div>
-        <div class="stat"><div class="num">3</div><div class="lbl">Дней программирования</div></div>
-        <div class="stat"><div class="num">2038</div><div class="lbl">Запуск Kronos AI</div></div>
-    </div>
+    <main class="container">
 
-    <div class="section">
-        <h2>Обо мне</h2>
-        <div class="about">
-            <p>Привет! Я <span>Алдияр</span>, известный как <span>Kronos</span> — начинающий разработчик из <span>Астаны, Казахстан</span>. Мне почти 15 лет.</p>
-            <br>
-            <p>Моя цель — создать <span>Kronos AI</span> — универсальную языковую модель, которая будет конкурировать с <span>GPT, Grok и Gemini</span> и использоваться в различных сферах жизни: военной, образовательной, бытовой и других.</p>
-            <br>
-            <p>Я использую <span>Claude Sonnet</span> и <span>ChatGPT / Codex</span> для изучения новых навыков, генерации идей и решения задач.</p>
-            <br>
-            <p>Я постоянно учусь и развиваюсь для достижения своей цели. Каждый проект всегда будет иметь лучшую версию — я постоянно их обновляю и добавляю новые функции.</p>
-            <br>
-            <p>Я всегда открыт для сотрудничества и новых идей — не стесняйтесь обращаться!</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Скачать проекты</h2>
-        <div class="projects-grid">
-
-            <div class="project-card">
-                <div class="icon">🧮</div>
-                <h3>Calculator V5</h3>
-                <p>Научный калькулятор с графиками, матрицами, комплексными числами и историей вычислений.</p>
-                <a href="Calculator V5 by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-                <span class="tag">matplotlib</span>
+        <!-- Software Suite Section -->
+        <section id="suite">
+            <div class="section-header">
+                <h2>Рабочая среда (Мои проекты)</h2>
+                <p>Полностью скомпилированные консольные системы и аналитические наборы инструментов.</p>
             </div>
 
-            <div class="project-card">
-                <div class="icon">⚡</div>
-                <h3>Calculator ULTRA</h3>
-                <p>12 модулей: производные, интегралы, матрицы, статистика, финансовый калькулятор, режим программиста и многое другое.</p>
-                <a href="KRONOS CALCULATOR ULTRA by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-                <span class="tag">Advanced</span>
+            <div class="projects-grid">
+                <!-- Project 1: Kronos Calculator ULTRA -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Calculator ULTRA <span class="version">v2.5</span></h3>
+                        <p>Мощный вычислительный комплекс, состоящий из 12 модулей: производные, интегралы, матрицы, статистика, финансовый калькулятор, режим программиста и линейная алгебра.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Advanced Python</span>
+                        <a href="Russian/KRONOS CALCULATOR ULTRA by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Kronos Toolkit 2.0 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Kronos Toolkit <span class="version">v2.0</span></h3>
+                        <p>Элитная экосистема из 26 тактических скриптов: математические движки, работа с текстом, переводчики, модули продуктивности и встроенный ИИ-бот через Groq API.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Python Core</span>
+                        <a href="Russian/Kronos TOOLKIT 2.0 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Calculator V5 -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Научный Калькулятор <span class="version">v5.0</span></h3>
+                        <p>Комплексный математический процессор для сложных систем, матриц, алгебраических операций, тригонометрии и рендеринга графиков в реальном времени через Matplotlib.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Matplotlib</span>
+                        <a href="Russian/Calculator V5 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Password Manager -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Менеджер Паролей <span class="version">Stable</span></h3>
+                        <p>Локальное хранилище данных с использованием симметричного шифрования Fernet (стек Cryptography) для абсолютной защиты конфиденциальной информации.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Cryptography</span>
+                        <a href="Russian/Password Manager by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Currency Converter -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Глобальный Конвертер <span class="version">v2.0</span></h3>
+                        <p>Высокоэффективный узел конвертации, связывающий 30 мировых валют (включая KZT, USD, EUR, CNY, RUB) с мгновенным выводом матрицы мульти-конвертации.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Data Matrix</span>
+                        <a href="Russian/Money Convertor V2 by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Password Generator -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Генератор Энтропии <span class="version">v2.0</span></h3>
+                        <p>Криптографически надежный генератор паролей. Создает последовательности до 128 символов на латинице, кириллице, арабском, греческом и иероглифах.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Secrets Mod</span>
+                        <a href="Russian/Password Generator V2 by Kronos Russain.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 7: Guess Game -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Угадай Число <span class="version">Hardcore</span></h3>
+                        <p>Усложненная версия классической игры на логику. Диапазон до 1 000 000, умные динамические подсказки, счетчик попыток и встроенный таймер для отслеживания скорости.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">Logic Engine</span>
+                        <a href="Russian/Number Guess Game Hardcore Edition by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Note App -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Менеджер Заметок <span class="version">v1.0</span></h3>
+                        <p>Оптимизированный консольный инструмент для локального ведения журнала, чтения, редактирования и управления текстовыми файлами без лишних затрат памяти.</p>
+                    </div>
+                    <div class="card-meta">
+                        <span class="tag-tech">File System</span>
+                        <a href="Russian/Note-taking application by Kronos Russian.py" class="btn-download" download>⚡ Запустить</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Pipeline Section -->
+        <section id="pipeline" class="pipeline-box">
+            <div class="section-header">
+                <h2>Оперативный Конвейер</h2>
+                <p>Отслеживание приоритетных внутренних систем, находящихся на стадии разработки или активного улучшения.</p>
+            </div>
+            <div class="pipeline-item">
+                <div class="pipeline-left">
+                    <div class="pipeline-status active"></div>
+                    <div>
+                        <div class="pipeline-name">Kronos NanoV1 Core</div>
+                        <div class="pipeline-desc">Разработка локального стека обучения текстовых нейросетей, построенного на базе кастомной архитектуры NanoGPT.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="pipeline-item">
+                <div class="pipeline-left">
+                    <div class="pipeline-status"></div>
+                    <div>
+                        <div class="pipeline-name">Ultimate Toolkit Bundle</div>
+                        <div class="pipeline-desc">Рефакторинг модулей старого кода версии 1.0 для их бесшовной интеграции в единую архитектуру ядра v2.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Nexus: Kronos AI Blueprint -->
+        <section id="nexus" class="nexus-section">
+            <div class="section-header">
+                <h2>Нексус: Дорожная карта Kronos AI (2038)</h2>
+                <p>Стратегическая инициатива по разработке всеобъемлющей, высокоадаптивной когнитивной сети, способной конкурировать с GPT, Gemini и Grok на мировой арене.</p>
             </div>
 
-            <div class="project-card">
-                <div class="icon">🧰</div>
-                <h3>Kronos Toolkit 2.0</h3>
-                <p>26 инструментов в одной программе — Математика, Конверторы, Текст, Игры, Жизнь и Развлечения.</p>
-                <a href="Kronos_TOOLKIT_2_0_by_Kronos_English.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
+            <div class="nexus-grid">
+                <div class="nexus-item">
+                    <div class="nexus-icon">🎖️</div>
+                    <h4>Kronos Военный</h4>
+                    <p>Стратегическая оценка рисков, тактический анализ данных и технические вычислительные модули для инженерии.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">👧</div>
+                    <h4>Kronos Образование</h4>
+                    <p>Адаптивные нейросети, настроенные на безопасное когнитивное развитие и персонализированное обучение детей.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">🎓</div>
+                    <h4>Kronos Студент</h4>
+                    <p>Комплексный помощник в написании академических работ, автоматизации исследований и оптимизации программного кода.</p>
+                </div>
+                <div class="nexus-item">
+                    <div class="nexus-icon">🏠</div>
+                    <h4>Kronos Дом</h4>
+                    <p>Автономная автоматизация повседневной бытовой логики, финансовый трекинг и алгоритмы улучшения образа жизни.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="project-card">
-                <div class="icon">🛠️</div>
-                <h3>Ultimate Toolkit 1.0</h3>
-                <p>20 инструментов в одной программе — калькуляторы, игры, конверторы, блокнот и многое другое.</p>
-                <a href="Ultimate Toolkit by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
+    </main>
 
-            <div class="project-card">
-                <div class="icon">💱</div>
-                <h3>Currency Converter V2</h3>
-                <p>Конвертер с поддержкой 30 мировых валют. Конвертируй сразу во все валюты.</p>
-                <a href="Money Convertor V2 by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">🔑</div>
-                <h3>Password Generator V2</h3>
-                <p>Многоязычные пароли — английский, русский, китайский, японский, греческий и арабский.</p>
-                <a href="Password Generator V2 by Kronos Russain.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">🔐</div>
-                <h3>Password Manager</h3>
-                <p>Зашифрованный менеджер паролей с шифрованием Fernet.</p>
-                <a href="Password Manager by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">😈</div>
-                <h3>Guess The Number Hardcore</h3>
-                <p>Угадай число от 1 до 1 000 000 с умными подсказками и таймером.</p>
-                <a href="Number Guess Game Hardcore Edition by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">✂️</div>
-                <h3>Rock Paper Scisors</h3>
-                <p>Классическая игра против компьютера с подсчётом очков.</p>
-                <a href="Rock Paper Scizors Game by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">🔁</div>
-                <h3>Text reverse tool</h3>
-                <p>Переворачивает текст по символам и по словам.</p>
-                <a href="Text reserve by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-            <div class="project-card">
-                <div class="icon">📝</div>
-                <h3>Note-taking Application</h3>
-                <p>Блокнот с функциями создания, чтения, редактирования и удаления.</p>
-                <a href="Note-taking application by Kronos Russian.py" download style="display:inline-block;margin-top:10px;color:#00d4ff;border:1px solid #00d4ff44;padding:5px 14px;border-radius:20px;text-decoration:none;font-size:12px;">⬇ Скачать</a>
-                <span class="tag">Python</span>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Скоро</h2>
-        <div class="wip">
-            <p>🚧 Несколько проектов находятся в разработке:</p>
-            <br>
-            <p>🤖 <span>KronosNanoV1</span> — первый прототип Kronos AI на основе NanoGPT</p>
-            <p>✅ <span>Kronos Calculator ULTRA</span> — выпущен! Скачайте выше.</p>
-            <p>⬆️ <span>Улучшенные версии</span> всех существующих проектов</p>
-        </div>
-    </div>
-
-    <div class="kronos-banner">
-        <h2>⚡ Kronos AI</h2>
-        <p>Универсальный ИИ для всех — умнее и эффективнее Grok.</p>
-        <p>Конкурирует с GPT, Gemini и Grok на мировой арене.</p>
-        <p>Создан для военных, образования, студентов и обычных пользователей.</p>
-        <div class="modules">
-            <div class="module"><span>🎖️</span>Kronos Военный</div>
-            <div class="module"><span>👧</span>Kronos Образование</div>
-            <div class="module"><span>🎓</span>Kronos Студент</div>
-            <div class="module"><span>🏠</span>Kronos Дом</div>
-        </div>
-    </div>
-
+    <!-- Footer Terminal -->
     <footer>
-        <p>© 2026 <span>Kronos</span> · Астана, Казахстан · Строю будущее ИИ</p>
-        <p style="margin-top: 8px;">Контакт: <a href="https://t.me/Zuroking" style="color:#00d4ff;text-decoration:none;">t.me/Zuroking</a></p>
+        <p>© 2026 <span>KRONOS SOFTWARE LABS</span> · Астана, Казахстан</p>
+        <p style="margin-top: 6px; color: rgba(255,255,255,0.3);">Вектор: Факультет Computer Science в Нанкинском университете (NJU) · Видение: Alibaba DAMO / Baidu AI Labs Hub</p>
+        <p style="margin-top: 12px;">Защищенный канал связи: <a href="https://t.me/Zuroking">Telegram Terminal</a></p>
     </footer>
 
 </body>
