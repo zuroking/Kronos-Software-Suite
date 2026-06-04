@@ -1,0 +1,39 @@
+                         ┌─────────────────┐
+                         │  kronos_core.py │
+                         └────────┬────────┘
+                                  │
+        ┌─────────────────────────┼─────────────────────────┐
+        │                         │                         │
+        ▼                         ▼                         ▼
+
+┌────────────────┐      ┌────────────────┐      ┌────────────────┐
+│ Математика     │      │ Финансы        │      │ Наука          │
+└───────┬────────┘      └───────┬────────┘      └───────┬────────┘
+        │                       │                       │
+        ├─ mod_calculus.py      ├─ mod_fin_bonds.py     ├─ mod_physics.py
+        ├─ mod_equations.py     ├─ mod_fin_credit.py    ├─ mod_chemistry.py
+        ├─ mod_geometry.py      ├─ mod_fin_currency.py  ├─ mod_stats.py
+        ├─ mod_matrix.py        ├─ mod_fin_investment.py
+        ├─ mod_vectors.py       ├─ mod_fin_inflation.py
+        └─ mod_number_theory.py └─ mod_fin_depreciation.py
+
+        ▼
+┌─────────────────────────────────────────────┐
+│ Инструменты                                 │
+├─────────────────────────────────────────────┤
+│ mod_converter.py                            │
+│ mod_bases.py                                │
+│ mod_plotting.py                             │
+│ mod_formula_book.py                         │
+│ mod_crypto_hashing.py                       │
+│ mod_rpn.py                                  │
+│ mod_tests.py                                │
+└─────────────────────────────────────────────┘
+
+        ▼
+┌─────────────────────────────────────────────┐
+│ Хранилище данных                            │
+├─────────────────────────────────────────────┤
+│ kronos_history.csv                          │
+│ kronos_history.json                         │
+└─────────────────────────────────────────────┘
